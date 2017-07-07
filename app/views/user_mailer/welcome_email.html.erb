@@ -1,13 +1,15 @@
-<section class="orders-show">
 
-  <header class="page-header">
-    <h1>Order #<%= @order.id %></h1>
-    <h2>Email: #<%= @order.email %></h2>
-  </header>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Welcome to the Jungle, <%= @email %></h1>
+    <p>
+      You have successfully placed an Order.
 
-  <div class="order-summary jumbotron">
-    <h3>Thank you for your order!</h3>
-    <h4> Order Items: </h4>
+    </p>
     <div class="panel panel-default items">
     <table class="table table-bordered">
       <thead>
@@ -35,11 +37,8 @@
       </tfoot>
     </table>
   </div>
-  </div>
-
-  <%= link_to "Continue Shopping", root_path, class: 'btn btn-lg btn-primary' %>
-
-</section>
-
-
-
+    <p>
+    </p>
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>
