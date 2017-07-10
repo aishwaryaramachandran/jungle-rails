@@ -22,10 +22,40 @@
           <dd><%= @product.quantity %></dd>
           <dt>Price</dt>
           <dd><%= @product.price %></dd>
+          <dt>Add a Review:</dt>
+          <dd>
+            <%= form_for([@product, @new_review]) do |f| %>
+            <p><%= f.text_area :description, id: :product_reviews%> </p>
+            <%= f.select :rating, 1...5, id: :product_reviews %>
+            <p><%= f.submit%></p>
+          <% end %>
+          </dd>
         </dl>
+
+        <table class="table table-bordered">
+          <caption><h4> Reviews </h4></caption>
+           <thead>
+             <td><h5>Rating</h5></td>
+             <td><h5>Name</h5></td>
+             <td><h5>Description</h5></td>
+
+           </thead>
+           <tbody>
+            <% @product.reviews.reverse_each do |item| %>
+             <tr>
+               <td><%= item.rating %></td>
+               <td><%= item.description %></td>
+               <td><%= item.user_id %></td>
+             </tr>
+           <% end %>
+
+          </tbody>
+          </table>
       </div>
     </div>
 
   </article>
 
 </section>
+
+

@@ -131,6 +131,21 @@ cat3.products.create!({
   quantity: 23,
   price: 2_483.75
 })
+  User.destroy_all
 
+  User.create!({
+   name: 'Aisha',
+    email: 'a@a.a',
+    password_digest: '1234'
+    })
+
+  Review.destroy_all
+
+  Review.create!({
+    product_id: 2,
+    user_id: 1,
+    description: '12345',
+    rating: 3
+    })
 
 puts "DONE!"
