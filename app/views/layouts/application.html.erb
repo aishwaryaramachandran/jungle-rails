@@ -9,6 +9,11 @@
 <body>
   <main class="container">
   <%= render 'layouts/top_nav' %>
+
+  <% flash.each do |name, message| %>
+    <%= content_tag :div, message, class: "alert alert-info" %>
+  <% end %>
+
   <% if current_user %>
   Signed in as <%= current_user.name %> | <%= link_to "Logout", '/logout' %>
   <% else %>

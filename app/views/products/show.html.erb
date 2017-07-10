@@ -26,8 +26,13 @@
           <dd>
             <%= form_for([@product, @new_review]) do |f| %>
             <p><%= f.text_area :description, id: :product_reviews%> </p>
-            <%= f.select :rating, 1...5, id: :product_reviews %>
-            <p><%= f.submit%></p>
+            <p><%= f.select :rating, 1...5, id: :product_reviews %> </p>
+            <p><%= f.submit class:'btn btn-primary'%></p>
+            <p>
+              <%= link_to add_item_cart_path(product_id: @product.id), class: 'btn btn-primary', method: :put do %>
+              <%= fa_icon "shopping-cart", text: 'Add' %>
+              <% end %>
+            </p>
           <% end %>
           </dd>
         </dl>
